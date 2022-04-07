@@ -14,10 +14,11 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             List {
-                NavigationLink("Counter") { CounterView(state: state) }
+                NavigationLink("Counter") {
+                    CounterView(state: state, wolframService: WolframServiceFactory.makeService())
+                }
                 NavigationLink("Favorite primes") { EmptyView() }
             }
-            .lineSpacing(10.0)
             .navigationTitle("Home")
         }
     }

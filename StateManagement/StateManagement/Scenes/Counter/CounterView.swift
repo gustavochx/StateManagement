@@ -10,6 +10,10 @@ import SwiftUI
 struct CounterView: View {
 
     @ObservedObject var state: AppState
+    @State var isPrimeModalShown: Bool = false
+    @State var isNthPrimeButtonDisabled: Bool = false
+
+    var wolframService: WolframService
 
     enum ViewConstants {
         static let mainSpacing: CGFloat = 20.0
@@ -21,32 +25,40 @@ struct CounterView: View {
 
             HStack(spacing: ViewConstants.counterSpacing) {
 
-                Button(action: {}) {
+                Button(action: { state.count -= 1 }) {
                     Text("-")
                 }
 
                 Text("\(state.count)")
 
-                Button(action: {}) {
+                Button(action: { state.count += 1 }) {
                     Text("+")
                 }
             }
 
-            Button(action: {}) {
+            Button(action: { isPrimeModalShown = true }) {
                 Text("Is this prime?")
             }
 
-            Button(action: {}) {
-                Text("What is the \(OrdinalFormatter.format(self.state.count)) prime?")
-            }
+            Button(action: nthPrimeButtonAction) {
+                Text("What is the \(OrdinalFormatter.format(state.count)) prime?")
+            }.disabled(isPrimeModalShown)
         }
         .font(.title)
         .navigationTitle("Counter")
+    }
+
+    private func nthPrimeButtonAction() {
+        isNthPrimeButtonDisabled = true
+        wolframService.nthPrime(state.count) { prime in
+            isNthPrimeButtonDisabled = false
+        }
     }
 }
 
 struct CounterView_Previews: PreviewProvider {
     static var previews: some View {
-        CounterView(state: .init())
+        CounterView(state: AppState(),
+                    wolframService: WolframService(networkManager: NetworkManagerImplementation()))
     }
 }

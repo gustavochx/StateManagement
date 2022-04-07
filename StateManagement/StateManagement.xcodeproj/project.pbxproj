@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		1524ADE727FE5B8600F4358F /* OrdinalFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1524ADE627FE5B8600F4358F /* OrdinalFormatter.swift */; };
+		1534396A27FE678D004EF62F /* WolframAlpha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1534396927FE678D004EF62F /* WolframAlpha.swift */; };
+		1534396E27FE6809004EF62F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1534396D27FE6809004EF62F /* NetworkManager.swift */; };
+		1534397127FE681C004EF62F /* WolframAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1534397027FE681C004EF62F /* WolframAPI.swift */; };
+		1534397527FE6B55004EF62F /* WolframService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1534397427FE6B55004EF62F /* WolframService.swift */; };
+		1534397827FE6E28004EF62F /* WolframServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1534397727FE6E28004EF62F /* WolframServiceFactory.swift */; };
 		1581387527F345F400020B2A /* StateManagementApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1581387427F345F400020B2A /* StateManagementApp.swift */; };
 		1581387927F345FB00020B2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1581387827F345FB00020B2A /* Assets.xcassets */; };
 		1581387C27F345FB00020B2A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1581387B27F345FB00020B2A /* Preview Assets.xcassets */; };
@@ -30,6 +35,11 @@
 
 /* Begin PBXFileReference section */
 		1524ADE627FE5B8600F4358F /* OrdinalFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdinalFormatter.swift; sourceTree = "<group>"; };
+		1534396927FE678D004EF62F /* WolframAlpha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WolframAlpha.swift; sourceTree = "<group>"; };
+		1534396D27FE6809004EF62F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		1534397027FE681C004EF62F /* WolframAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WolframAPI.swift; sourceTree = "<group>"; };
+		1534397427FE6B55004EF62F /* WolframService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WolframService.swift; sourceTree = "<group>"; };
+		1534397727FE6E28004EF62F /* WolframServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WolframServiceFactory.swift; sourceTree = "<group>"; };
 		1581387127F345F400020B2A /* StateManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StateManagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1581387427F345F400020B2A /* StateManagementApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateManagementApp.swift; sourceTree = "<group>"; };
 		1581387827F345FB00020B2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -82,6 +92,46 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		1534396827FE677B004EF62F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1534396927FE678D004EF62F /* WolframAlpha.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1534396B27FE67EC004EF62F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				1534396D27FE6809004EF62F /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		1534396F27FE680B004EF62F /* API */ = {
+			isa = PBXGroup;
+			children = (
+				1534397027FE681C004EF62F /* WolframAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		1534397327FE6B44004EF62F /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				1534397427FE6B55004EF62F /* WolframService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		1534397627FE6E1B004EF62F /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				1534397727FE6E28004EF62F /* WolframServiceFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
 		1581386827F345F400020B2A = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +154,8 @@
 		1581387327F345F400020B2A /* StateManagement */ = {
 			isa = PBXGroup;
 			children = (
+				1534397627FE6E1B004EF62F /* Factory */,
+				1534396827FE677B004EF62F /* Model */,
 				1524ADE827FE5CFC00F4358F /* Resource */,
 				1524ADE527FE5B6800F4358F /* Formatter */,
 				1524ADE427FE5B2600F4358F /* Extension */,
@@ -145,6 +197,9 @@
 		158138A127F34BE900020B2A /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				1534397327FE6B44004EF62F /* Service */,
+				1534396F27FE680B004EF62F /* API */,
+				1534396B27FE67EC004EF62F /* Network */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -275,8 +330,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1524ADE727FE5B8600F4358F /* OrdinalFormatter.swift in Sources */,
+				1534397827FE6E28004EF62F /* WolframServiceFactory.swift in Sources */,
+				1534397527FE6B55004EF62F /* WolframService.swift in Sources */,
 				1581387527F345F400020B2A /* StateManagementApp.swift in Sources */,
 				158138A827F34CC400020B2A /* AppState.swift in Sources */,
+				1534396E27FE6809004EF62F /* NetworkManager.swift in Sources */,
+				1534396A27FE678D004EF62F /* WolframAlpha.swift in Sources */,
+				1534397127FE681C004EF62F /* WolframAPI.swift in Sources */,
 				158138A627F34CB300020B2A /* HomeView.swift in Sources */,
 				158138AA27F3517400020B2A /* CounterView.swift in Sources */,
 			);
