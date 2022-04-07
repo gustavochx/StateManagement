@@ -13,6 +13,9 @@
 		1534397127FE681C004EF62F /* WolframAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1534397027FE681C004EF62F /* WolframAPI.swift */; };
 		1534397527FE6B55004EF62F /* WolframService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1534397427FE6B55004EF62F /* WolframService.swift */; };
 		1534397827FE6E28004EF62F /* WolframServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1534397727FE6E28004EF62F /* WolframServiceFactory.swift */; };
+		1534397C27FF2F5D004EF62F /* PrimeAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1534397B27FF2F5D004EF62F /* PrimeAlertView.swift */; };
+		1534397E27FF305C004EF62F /* PrimeAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1534397D27FF305C004EF62F /* PrimeAlert.swift */; };
+		1534398027FF3676004EF62F /* LoadingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1534397F27FF3676004EF62F /* LoadingButton.swift */; };
 		1581387527F345F400020B2A /* StateManagementApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1581387427F345F400020B2A /* StateManagementApp.swift */; };
 		1581387927F345FB00020B2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1581387827F345FB00020B2A /* Assets.xcassets */; };
 		1581387C27F345FB00020B2A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1581387B27F345FB00020B2A /* Preview Assets.xcassets */; };
@@ -40,6 +43,9 @@
 		1534397027FE681C004EF62F /* WolframAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WolframAPI.swift; sourceTree = "<group>"; };
 		1534397427FE6B55004EF62F /* WolframService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WolframService.swift; sourceTree = "<group>"; };
 		1534397727FE6E28004EF62F /* WolframServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WolframServiceFactory.swift; sourceTree = "<group>"; };
+		1534397B27FF2F5D004EF62F /* PrimeAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimeAlertView.swift; sourceTree = "<group>"; };
+		1534397D27FF305C004EF62F /* PrimeAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimeAlert.swift; sourceTree = "<group>"; };
+		1534397F27FF3676004EF62F /* LoadingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButton.swift; sourceTree = "<group>"; };
 		1581387127F345F400020B2A /* StateManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StateManagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1581387427F345F400020B2A /* StateManagementApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateManagementApp.swift; sourceTree = "<group>"; };
 		1581387827F345FB00020B2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -132,6 +138,16 @@
 			path = Factory;
 			sourceTree = "<group>";
 		};
+		1534397A27FF2F4A004EF62F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				1534397D27FF305C004EF62F /* PrimeAlert.swift */,
+				1534397B27FF2F5D004EF62F /* PrimeAlertView.swift */,
+				1534397F27FF3676004EF62F /* LoadingButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		1581386827F345F400020B2A = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +170,7 @@
 		1581387327F345F400020B2A /* StateManagement */ = {
 			isa = PBXGroup;
 			children = (
+				1534397A27FF2F4A004EF62F /* Components */,
 				1534397627FE6E1B004EF62F /* Factory */,
 				1534396827FE677B004EF62F /* Model */,
 				1524ADE827FE5CFC00F4358F /* Resource */,
@@ -329,15 +346,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1534398027FF3676004EF62F /* LoadingButton.swift in Sources */,
 				1524ADE727FE5B8600F4358F /* OrdinalFormatter.swift in Sources */,
 				1534397827FE6E28004EF62F /* WolframServiceFactory.swift in Sources */,
 				1534397527FE6B55004EF62F /* WolframService.swift in Sources */,
 				1581387527F345F400020B2A /* StateManagementApp.swift in Sources */,
+				1534397E27FF305C004EF62F /* PrimeAlert.swift in Sources */,
 				158138A827F34CC400020B2A /* AppState.swift in Sources */,
 				1534396E27FE6809004EF62F /* NetworkManager.swift in Sources */,
 				1534396A27FE678D004EF62F /* WolframAlpha.swift in Sources */,
 				1534397127FE681C004EF62F /* WolframAPI.swift in Sources */,
 				158138A627F34CB300020B2A /* HomeView.swift in Sources */,
+				1534397C27FF2F5D004EF62F /* PrimeAlertView.swift in Sources */,
 				158138AA27F3517400020B2A /* CounterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

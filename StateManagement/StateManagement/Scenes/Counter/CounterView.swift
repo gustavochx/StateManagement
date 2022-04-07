@@ -41,14 +41,20 @@ struct CounterView: View {
                 Text("Is this prime?")
             }
 
-            Button(action: nthPrimeButtonAction) {
-                Text("What is the \(OrdinalFormatter.format(state.count)) prime?")
-            }.disabled(isPrimeModalShown)
+            LoadingButton(isLoading: $isNthPrimeButtonDisabled, action: nthPrimeButtonAction) {
+                Text("\(OrdinalFormatter.format(state.count)) prime?")
+            }
+        
         }
-        .font(.title)
         .navigationTitle("Counter")
         .sheet(isPresented: $isPrimeModalShown) {
             PrimeAlertView(state: state)
+        }
+        .alert(item: self.$alertNthPrime) { alert in
+            Alert(
+                title: Text("The \(OrdinalFormatter.format(self.state.count)) prime is \(alert.prime)"),
+                dismissButton: .default(Text("Ok"))
+            )
         }
     }
 
