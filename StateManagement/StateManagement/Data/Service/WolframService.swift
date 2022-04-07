@@ -19,7 +19,9 @@ final class WolframService {
         networkManager.request(url: WolframAPI.input(query: "prime \(number)").endpoint,
                                response: WolframAlphaResponse.self) { result in
             callback(result.flatMap {
-                $0.queryresult.pods.first { $0.primary == .some(true) }?.subpods.first?.plaintext
+                $0.queryresult.pods.first {
+                    $0.primary == .some(true)
+                }?.subpods.first?.plaintext
             }.flatMap(Int.init))
         }
     }

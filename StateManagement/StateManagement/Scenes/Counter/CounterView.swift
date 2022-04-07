@@ -12,7 +12,8 @@ struct CounterView: View {
     @ObservedObject var state: AppState
     @State var isPrimeModalShown: Bool = false
     @State var isNthPrimeButtonDisabled: Bool = false
-
+    @State var alertNthPrime: PrimeAlert?
+    
     var wolframService: WolframService
 
     enum ViewConstants {
@@ -46,11 +47,15 @@ struct CounterView: View {
         }
         .font(.title)
         .navigationTitle("Counter")
+        .sheet(isPresented: $isPrimeModalShown) {
+            PrimeAlertView(state: state)
+        }
     }
 
     private func nthPrimeButtonAction() {
         isNthPrimeButtonDisabled = true
         wolframService.nthPrime(state.count) { prime in
+            alertNthPrime = prime.map(PrimeAlert.init(prime:))
             isNthPrimeButtonDisabled = false
         }
     }

@@ -22,9 +22,7 @@ final class NetworkManagerImplementation: NetworkManager {
 
     func request<T: Decodable>(url: URL, response: T.Type, callback: @escaping (T?) -> Void) {
         session.dataTask(with: url) { data, response, error in
-            callback(
-                data.flatMap { try? JSONDecoder().decode(T.self, from: $0) }
-            )
+            callback(data.flatMap { try? JSONDecoder().decode(T.self, from: $0) })
         }.resume()
     }
 }
